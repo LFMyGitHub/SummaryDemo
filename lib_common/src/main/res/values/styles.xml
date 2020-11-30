@@ -1,0 +1,40 @@
+<resources>
+    <!-- ToolBar菜单样式 -->
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@color/color_1976D2</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="toolbarStyle">@style/NoSpaceActionBarTheme</item>
+    </style>
+
+    <style name="Theme.AppStartLoad" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/iv_deafut_splash</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:navigationBarColor">@color/transparent</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+    </style>
+
+    <style name="NoSpaceActionBarTheme" parent="Base.Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+    </style>
+
+    <style name="splash_btn_next">
+        <item name="android:paddingRight">@dimen/dp_10</item>
+        <item name="android:paddingLeft">@dimen/dp_10</item>
+        <item name="android:paddingTop">@dimen/dp_5</item>
+        <item name="android:paddingBottom">@dimen/dp_5</item>
+        <item name="android:background">@drawable/bg_splash_next</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:layout_marginRight">@dimen/dp_20</item>
+        <item name="android:layout_marginTop">@dimen/dp_20</item>
+    </style>
+</resources>

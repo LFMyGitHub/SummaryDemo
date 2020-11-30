@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    >
+    <ImageView
+        android:id="@+id/iv_splash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:scaleType="fitXY"
+        />
+
+    <TextView
+        android:id="@+id/btn_splash_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/splash_btn_next"
+        android:text="跳过"
+        />
+</FrameLayout>
