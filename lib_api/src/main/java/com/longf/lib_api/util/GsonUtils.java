@@ -1,4 +1,4 @@
-package com.longf.lib_common.util;
+package com.longf.lib_api.util;
 
 
 import com.google.gson.ExclusionStrategy;

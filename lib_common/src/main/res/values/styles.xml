@@ -19,7 +19,9 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:navigationBarColor">@color/transparent</item>
-        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+
     </style>
 
     <style name="NoSpaceActionBarTheme" parent="Base.Widget.AppCompat.Toolbar">
@@ -33,8 +35,8 @@
         <item name="android:paddingTop">@dimen/dp_5</item>
         <item name="android:paddingBottom">@dimen/dp_5</item>
         <item name="android:background">@drawable/bg_splash_next</item>
-        <item name="android:layout_gravity">right</item>
+        <item name="android:layout_gravity">bottom|right</item>
         <item name="android:layout_marginRight">@dimen/dp_20</item>
-        <item name="android:layout_marginTop">@dimen/dp_20</item>
+        <item name="android:layout_marginBottom">@dimen/dp_60</item>
     </style>
 </resources>

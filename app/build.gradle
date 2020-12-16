@@ -26,7 +26,7 @@ dependencies {
     implementation project(':lib_common')
     if (!isModule.toBoolean()) {
         implementation project(':module_main')
-//        implementation project(':module_pro1')
+        implementation project(':module_me')
 //        implementation project(':module_pro2')
 //        implementation project(':module_pro3')
 //        implementation project(':module_pro4')

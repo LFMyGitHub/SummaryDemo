@@ -18,6 +18,23 @@ public class SimulateNetAPI {
      * 获取去最原始的数据信息
      * @return json data
      */
+    public static String getOriginalFundData(String filename, Context context) {
+        InputStream input = null;
+        try {
+            //taipingyang.json文件名称
+            input = context.getAssets().open(filename);
+            String json = convertStreamToString(input);
+            return json;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 获取去最原始的数据信息
+     * @return json data
+     */
     public static String getOriginalFundData(String filename, Application application) {
         InputStream input = null;
         try {
@@ -63,5 +80,19 @@ public class SimulateNetAPI {
                     | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN;
             decorView.setSystemUiVisibility(uiOptions);
         }
+    }
+
+    /**
+     * 获得导航栏高度
+     * @param context
+     * @return
+     */
+    public static int getStatusBarHeight(Context context) {
+        int result = 0;
+        int resId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resId > 0) {
+            result = context.getResources().getDimensionPixelOffset(resId);
+        }
+        return result;
     }
 }

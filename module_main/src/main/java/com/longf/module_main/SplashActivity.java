@@ -73,6 +73,13 @@ public class SplashActivity extends BaseMvvmActivity<ViewDataBinding, SplashView
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        //隐藏导航栏
+        SimulateNetAPI.hideBottomUIMenu(this);
+    }
+
+    @Override
     public void initData() {
         //获取广告开关
         mViewModel.getAdsFrom();

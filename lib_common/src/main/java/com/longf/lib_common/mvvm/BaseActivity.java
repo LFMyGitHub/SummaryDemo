@@ -1,8 +1,10 @@
 package com.longf.lib_common.mvvm;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -10,13 +12,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.view.Window;
-import android.view.WindowManager;
+import android.view.WindowInsets;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.longf.lib_api.config.API;
@@ -59,9 +63,31 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseV
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.setContentView(R.layout.activity_root1);
         mContentView = (ViewGroup) findViewById(android.R.id.content);
+
         initCommonView();
         initContentView();
         ARouter.getInstance().inject(this);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            View decorView = window.getDecorView();
+            decorView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
+                @TargetApi(Build.VERSION_CODES.KITKAT_WATCH)
+                @Override
+                public WindowInsets onApplyWindowInsets(View v, WindowInsets insets) {
+                    WindowInsets defaultInsets = v.onApplyWindowInsets(insets);
+                    return defaultInsets.replaceSystemWindowInsets(
+                            defaultInsets.getSystemWindowInsetLeft(),
+                            0,
+                            defaultInsets.getSystemWindowInsetRight(),
+                            defaultInsets.getSystemWindowInsetBottom());
+                }
+            });
+            ViewCompat.requestApplyInsets(decorView);
+            //将状态栏设成透明，如不想透明可设置其他颜色
+            window.setStatusBarColor(ContextCompat.getColor(this, android.R.color.transparent));
+        }
+
         initView();
         initListener();
         initData();

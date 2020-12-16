@@ -12,7 +12,7 @@ import com.longf.lib_api.entity.AdsFromEntity;
 import com.longf.lib_api.http.ExceptionHandler;
 import com.longf.lib_common.event.SingleLiveEvent;
 import com.longf.lib_common.mvvm.viewmodel.BaseViewModel;
-import com.longf.lib_common.util.GsonUtils;
+import com.longf.lib_api.util.GsonUtils;
 import com.longf.lib_common.util.ImageLoadUtils;
 import com.longf.lib_common.util.SimulateNetAPI;
 import com.longf.lib_common.util.ToastUtils;

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="首页" />
+
+    <com.longf.lib_refresh.DaisyRefreshLayout
+        android:id="@+id/refview_main_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recview_main_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.longf.lib_refresh.DaisyRefreshLayout>
+</LinearLayout>

@@ -12,3 +12,6 @@
 /captures
 .externalNativeBuild
 .cxx
+gradle/
+.idea/
+module_me/src/test/

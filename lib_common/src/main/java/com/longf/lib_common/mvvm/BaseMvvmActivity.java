@@ -1,7 +1,6 @@
 package com.longf.lib_common.mvvm;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -12,7 +11,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.longf.lib_api.config.API;
 import com.longf.lib_common.mvvm.viewmodel.BaseViewModel;
 import com.longf.lib_common.util.log.KLog;
 

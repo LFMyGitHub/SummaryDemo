@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/color_f2f3f4"
+    android:paddingLeft="@dimen/dp_10"
+    android:paddingRight="@dimen/dp_10">
+
+    <TextView
+        android:id="@+id/tv_mypageline"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_12" />
+
+    <TextView
+        android:id="@+id/mypage_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_1"
+        android:layout_below="@id/tv_mypageline"
+        android:layout_marginLeft="@dimen/dp_57"
+        android:layout_marginRight="@dimen/dp_15"
+        android:background="@color/color_e6e9ea" />
+
+    <RelativeLayout
+        android:id="@+id/rl_mypage_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:layout_below="@id/mypage_line"
+        android:background="@color/color_FFFFFF">
+
+        <ImageView
+            android:id="@+id/iv_mypage_photo"
+            android:layout_width="@dimen/dp_28"
+            android:layout_height="@dimen/dp_28"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:scaleType="fitXY"
+            tools:src="@drawable/setting"
+            />
+
+        <TextView
+            android:id="@+id/tv_mypage_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_toRightOf="@id/iv_mypage_photo"
+            tools:text="设置一"
+            android:textColor="@color/color_303133"
+            android:textSize="@dimen/sp_14" />
+
+        <ImageView
+            android:id="@+id/iv_mypage_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_15"
+            android:src="@drawable/icon_arrow" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 
 import com.longf.lib_api.config.API;
+import com.longf.lib_api.http.CustomizeGsonConverterFactory;
+import com.longf.lib_api.util.GsonUtils;
 import com.longf.lib_api.util.SSLContextUtil;
 
 import java.io.IOException;
@@ -40,8 +42,8 @@ public class RetrofitManager {
         }
         okHttpBuilder.hostnameVerifier(SSLContextUtil.HOSTNAME_VERIFIER);
         mRetrofit = new Retrofit.Builder().client(okHttpBuilder.build()).baseUrl(API.URL_HOST_BASE)
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).
-                        addConverterFactory(GsonConverterFactory.create()).build();
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(CustomizeGsonConverterFactory.create()).build();
     }
 
     public static void init(Application application) {

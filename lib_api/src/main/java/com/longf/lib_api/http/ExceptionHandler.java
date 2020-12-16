@@ -113,6 +113,11 @@ public class ExceptionHandler {
          */
         public static final int TIMEOUT_ERROR = 1006;
 
+        /**
+         * 自定义错误
+         */
+        public static final int DEFAULT_ERROR = 1007;
+
     }
 
     public interface APP_ERROR {

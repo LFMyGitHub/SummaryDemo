@@ -1,2 +1,2 @@
-include ':app', ':lib_common', ':lib_refresh', ':lib_api', ':module_main'
+include ':app', ':lib_common', ':lib_refresh', ':lib_api', ':module_main', ':module_me'
 rootProject.name='SummaryDemo'

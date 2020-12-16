@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SplashActivity"
             android:theme="@style/Theme.AppStartLoad">
+            <meta-data android:name="android.notch_support" android:value="true"/>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
