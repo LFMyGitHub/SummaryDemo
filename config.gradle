@@ -65,6 +65,7 @@ ext {
             "MultiImageSelector"           : "com.github.lovetuzitong:MultiImageSelector:1.2",
             "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",
             "RoundedImageView"             : "com.makeramen:roundedimageview:2.3.0",
-            "SystemBarTint"             : "com.readystatesoftware.systembartint:systembartint:1.0.3"
+            "SystemBarTint"                : "com.readystatesoftware.systembartint:systembartint:1.0.3",
+            "EasyNavigation"               : "com.github.Vincent7Wong:EasyNavigation:2.0.5"
     ]
 }

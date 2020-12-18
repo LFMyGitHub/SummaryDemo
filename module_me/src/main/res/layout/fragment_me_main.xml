@@ -3,12 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_f2f3f4"
+    android:layout_marginBottom="-40dp"
     android:orientation="vertical">
 
     <com.longf.lib_refresh.DaisyRefreshLayout
         android:id="@+id/refview_me_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recview_me_list"

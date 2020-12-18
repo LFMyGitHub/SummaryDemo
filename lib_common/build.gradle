@@ -60,4 +60,5 @@ dependencies {
     api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
     api rootProject.ext.dependencies["RoundedImageView"]
     api rootProject.ext.dependencies["SystemBarTint"]
+    api rootProject.ext.dependencies["EasyNavigation"]
 }

@@ -3,14 +3,13 @@ package com.longf.module_me.adapter;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.annotation.Nullable;
+
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.longf.lib_api.entity.MainMeSettingEntity;
 import com.longf.module_me.R;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class MainMineAdapter extends BaseQuickAdapter<MainMeSettingEntity.DataBe
     }
 
     @Override
-    public void onBindViewHolder(@NotNull BaseViewHolder holder, int position) {
+    public void onBindViewHolder(@Nullable BaseViewHolder holder, int position) {
         if (holder.getItemViewType() != HEADER_VIEW && holder.getItemViewType() != FOOTER_VIEW) {
             //获取分组ID
             int currentID = dataBeanList.get(position - mHeaderView).getGroup_id();
@@ -60,7 +59,7 @@ public class MainMineAdapter extends BaseQuickAdapter<MainMeSettingEntity.DataBe
     }
 
     @Override
-    protected void convert(@NotNull BaseViewHolder baseViewHolder, MainMeSettingEntity.DataBean dataBean) {
+    protected void convert(@Nullable BaseViewHolder baseViewHolder, MainMeSettingEntity.DataBean dataBean) {
 
     }
 }

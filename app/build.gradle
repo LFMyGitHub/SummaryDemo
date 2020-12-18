@@ -32,8 +32,8 @@ dependencies {
     implementation project(':lib_common')
     if (!isModule.toBoolean()) {
         implementation project(':module_main')
-        implementation(name: 'module_me', ext: 'aar')
-//        implementation project(':module_me')
+        //implementation(name: 'module_me', ext: 'aar')
+        implementation project(':module_me')
 //        implementation project(':module_pro2')
 //        implementation project(':module_pro3')
 //        implementation project(':module_pro4')

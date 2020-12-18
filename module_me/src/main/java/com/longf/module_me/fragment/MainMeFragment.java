@@ -29,6 +29,7 @@ public class MainMeFragment extends BaseRefreshFragment<MainMeModel, MainMeContr
     private View mHeaderOneView;
     private View mFootOneView;
     private TextView mTvVersion;
+    private boolean flag = false;
 
     public static MainMeFragment newInstance() {
         return new MainMeFragment();
@@ -53,9 +54,9 @@ public class MainMeFragment extends BaseRefreshFragment<MainMeModel, MainMeContr
 
     @Override
     public void initView(View view) {
+        mRefreshLayout.setEnableLoadMore(false);
         mRecyclerView = view.findViewById(R.id.recview_me_list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
-
         mHeaderOneView = LayoutInflater.from(getActivity()).inflate(R.layout.item_list_me_header, null);
         mFootOneView = LayoutInflater.from(getActivity()).inflate(R.layout.item_list_me_footer, null);
         mTvVersion = mFootOneView.findViewById(R.id.tv_version_info);
@@ -85,6 +86,7 @@ public class MainMeFragment extends BaseRefreshFragment<MainMeModel, MainMeContr
 
     @Override
     public void onRefreshEvent() {
+        flag = true;
         mPresenter.getMainMeSettingData();
     }
 
@@ -130,6 +132,10 @@ public class MainMeFragment extends BaseRefreshFragment<MainMeModel, MainMeContr
             mRecyclerView.setAdapter(mMainMineAdapter);
         }else {
             mMainMineAdapter.setNewInstance(mList);
+        }
+
+        if(flag){
+            mTvVersion.setText("sssss");
         }
     }
 }

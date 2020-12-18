@@ -1,27 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <FrameLayout
         android:id="@+id/frame_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/navigation"
-        />
+        android:layout_marginBottom="@dimen/dp_60" />
+
+    <com.next.easynavigation.view.EasyNavigationBar
+        android:id="@+id/navigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"
-        app:menu="@menu/menu_navigation"
-        app:labelVisibilityMode="labeled"
-        app:itemTextColor="@drawable/color_state_menu_navi"
         app:itemIconTint="@drawable/color_state_menu_navi"
+        app:itemTextColor="@drawable/color_state_menu_navi"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_navigation"
+        android:visibility="gone"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/navigation_center_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:src="@drawable/defalut_header"
+        app:backgroundTint="@android:color/white"
+        app:borderWidth="@dimen/dp_0"
+        android:backgroundTint="@color/color_1E88E5"
+        app:elevation="@dimen/dp_80"
+        android:visibility="gone"
         />
 </RelativeLayout>

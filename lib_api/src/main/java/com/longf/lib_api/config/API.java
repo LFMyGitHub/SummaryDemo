@@ -3,6 +3,8 @@ package com.longf.lib_api.config;
 public class API {
     //1:开发2:测试
     public static final int APP_STATE = 2;
+    //菜单 1:BottomNavigationView 2:EasyNavigationBar 3:
+    public static final int MENU_STATE = 2;
 
     public static final String URL_HOST_BASE = "https://uc-csga.xcydhn.com";
     public static final String URL_HOST_NEWS = "http://192.168.31.105:8767";

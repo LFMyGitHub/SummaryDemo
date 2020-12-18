@@ -99,7 +99,7 @@ public class MainMePresenter extends BaseRefreshPresenter<MainMeModel, MainMeCon
                 if (API.APP_STATE == 2) {
                     String meSettingEntity = SimulateNetAPI.getOriginalFundData("json/MainMeSettingEntity.json", mContext);
                     final MainMeSettingEntity meSettingEntity1 = GsonUtils.gsonToBean(meSettingEntity, MainMeSettingEntity.class);
-                    ToastUtils.showToast(meSettingEntity1.getList().size()+"");
+                    mView.loadList(meSettingEntity1);
                 }
                 mView.hideInitLoadView();
             }
