@@ -2,21 +2,21 @@
   "list": [
     [{
       "id": "84",
-      "ico": "https:\/\/res-csga.xcydhn.com\/edd759574583b303ca74bc78ae036e98.png",
-      "title": "我的商铺",
-      "url": "https:\/\/pasph5-csga.xcydhn.com\/#\/myinfo",
+      "ico": "https://res-csga.xcydhn.com/5e6c337ef8ca0e494688a398a4e39e88.png",
+      "title": "个人中心",
+      "url": "开发中...",
       "cate_id": "1"
     }], [{
       "id": "87",
-      "ico": "https:\/\/res-csga.xcydhn.com\/36386390634e01b0f8b338529482ad25.png",
-      "title": "我的智慧视频",
-      "url": "https:\/\/uch5-csga.xcydhn.com\/#\/getroutebyuuid",
+      "ico": "iv_scan",
+      "title": "我的二维码",
+      "url": "summary://proto?view=MyScanCode_true",
       "cate_id": "2"
     }, {
       "id": "82",
-      "ico": "https:\/\/res-csga.xcydhn.com\/ea7e6417c360e5f679ef24f5fe0b780b.png",
-      "title": "我的反电诈报告",
-      "url": "https:\/\/uch5-csga.xcydhn.com\/#\/statement",
+      "ico": "iv_scan_bar",
+      "title": "我的条形码",
+      "url": "summary://proto?view=MyScanCode_false",
       "cate_id": "2"
     }], [{
       "id": "16",
@@ -54,30 +54,6 @@
       "title": "设置",
       "url": "colourlife:\/\/proto?type=Setting",
       "cate_id": "4"
-    }], [{
-      "id": "20",
-      "ico": "https:\/\/res-csga.xcydhn.com\/5e6c337ef8ca0e494688a398a4e39e88.png",
-      "title": "意见反馈",
-      "url": "https:\/\/uch5-csga.xcydhn.com\/#\/sugguest",
-      "cate_id": "5"
-    }, {
-      "id": "74",
-      "ico": "https:\/\/res-csga.xcydhn.com\/1ffd4fef00cb246a35df4d286f7b69ae.png",
-      "title": "交通事故远程处理志愿者",
-      "url": "https:\/\/volunteerv.chehaha.net\/#\/",
-      "cate_id": "5"
-    }, {
-      "id": "19",
-      "ico": "https:\/\/res-csga.xcydhn.com\/fab4d4687b5cf4097942c1adc27f9db9.png",
-      "title": "设置",
-      "url": "colourlife:\/\/proto?type=Setting",
-      "cate_id": "5"
-    }, {
-      "id": "19",
-      "ico": "https:\/\/res-csga.xcydhn.com\/fab4d4687b5cf4097942c1adc27f9db9.png",
-      "title": "设置",
-      "url": "colourlife:\/\/proto?type=Setting",
-      "cate_id": "5"
     }]
   ]
 }

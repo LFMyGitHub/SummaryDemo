@@ -1,7 +1,7 @@
 package com.longf.module_main;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,12 +17,16 @@ import com.longf.lib_api.config.API;
 import com.longf.lib_common.mvp.BaseActivity;
 import com.longf.lib_common.provider.IMainProvider;
 import com.longf.lib_common.provider.IMeProvider;
+import com.longf.lib_common.util.LinkUtils;
 import com.longf.lib_common.util.ToastUtils;
 import com.longf.module_main.entity.MainChannel;
 import com.next.easynavigation.view.EasyNavigationBar;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.functions.Consumer;
 
 public class MainActivity extends BaseActivity {
     @Autowired(name = "/main/main")
@@ -143,9 +147,11 @@ public class MainActivity extends BaseActivity {
         mNnavigationBar.titleItems(mTabText)
                 .normalIconItems(mNormalIcon)
                 .selectIconItems(mSelectIcon)
-                .addCustomView(LayoutInflater.from(this).inflate(R.layout.main_center_cusview, null))
+                .centerImageRes(R.drawable.common_cream)
+                .mode(EasyNavigationBar.NavigationMode.MODE_ADD)
                 .centerLayoutRule(EasyNavigationBar.RULE_BOTTOM)
-                .mode(EasyNavigationBar.NavigationMode.MODE_ADD_VIEW)
+//                .addCustomView(LayoutInflater.from(this).inflate(R.layout.main_center_cusview, null))//添加view
+//                .mode(EasyNavigationBar.NavigationMode.MODE_ADD_VIEW)
                 .scaleType(ImageView.ScaleType.FIT_XY)
                 .build();
 
@@ -178,6 +184,26 @@ public class MainActivity extends BaseActivity {
                 mNnavigationBar.setMsgPointCount(1, 5);
                 mNnavigationBar.setMsgPointCount(2, 2000);
                 mNnavigationBar.setHintPoint(3, true);
+            }
+        });
+
+        mNnavigationBar.setOnCenterTabClickListener(new EasyNavigationBar.OnCenterTabSelectListener() {
+            @Override
+            public boolean onCenterTabSelectEvent(View view) {
+                RxPermissions rxPermissions = new RxPermissions(MainActivity.this);
+                rxPermissions.request(Manifest.permission.CAMERA)
+                        .subscribe(new Consumer<Boolean>() {
+                            @Override
+                            public void accept(Boolean aBoolean) throws Exception {
+                                if (aBoolean) {
+                                    LinkUtils.parse(MainActivity.this, "summary://proto?view=MyScan", "扫一扫");
+                                } else {
+                                    //只要有一个权限被拒绝，就会执行
+                                    ToastUtils.showToast("请允许手机相机权限");
+                                }
+                            }
+                        });
+                return false;
             }
         });
     }

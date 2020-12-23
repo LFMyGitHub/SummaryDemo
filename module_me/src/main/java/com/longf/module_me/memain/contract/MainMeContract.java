@@ -1,4 +1,4 @@
-package com.longf.module_me.contract;
+package com.longf.module_me.memain.contract;
 
 import com.longf.lib_api.dto.RespDTO;
 import com.longf.lib_api.entity.MainMeEntity;

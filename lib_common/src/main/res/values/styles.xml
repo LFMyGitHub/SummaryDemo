@@ -39,4 +39,9 @@
         <item name="android:layout_marginRight">@dimen/dp_20</item>
         <item name="android:layout_marginBottom">@dimen/dp_60</item>
     </style>
+
+    <style name="OnClick">
+        <item name="android:clickable">true</item>
+        <item name="android:onClick">onClick</item>
+    </style>
 </resources>

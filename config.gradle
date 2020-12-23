@@ -66,6 +66,8 @@ ext {
             "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",
             "RoundedImageView"             : "com.makeramen:roundedimageview:2.3.0",
             "SystemBarTint"                : "com.readystatesoftware.systembartint:systembartint:1.0.3",
-            "EasyNavigation"               : "com.github.Vincent7Wong:EasyNavigation:2.0.5"
+            "EasyNavigation"               : "com.github.Vincent7Wong:EasyNavigation:2.0.5",
+            "ZXingLite"                    : "com.king.zxing:zxing-lite:1.1.9-androidx",
+            "ZXing"                        : "com.google.zxing:core:3.3.3",
     ]
 }

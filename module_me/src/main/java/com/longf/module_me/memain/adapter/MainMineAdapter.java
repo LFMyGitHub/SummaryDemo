@@ -1,4 +1,4 @@
-package com.longf.module_me.adapter;
+package com.longf.module_me.memain.adapter;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -51,7 +51,13 @@ public class MainMineAdapter extends BaseQuickAdapter<MainMeSettingEntity.DataBe
                 }
             }
             holder.setText(R.id.tv_mypage_nickname, dataBeanList.get(position - mHeaderView).getTitle());
-            Glide.with(getContext()).load(dataBeanList.get(position - mHeaderView).getIco()).into((ImageView) holder.getView(R.id.iv_mypage_photo));
+            if(dataBeanList.get(position - mHeaderView).getIco().startsWith("http")){
+                Glide.with(getContext()).load(dataBeanList.get(position - mHeaderView).getIco()).into((ImageView) holder.getView(R.id.iv_mypage_photo));
+            }else {
+                int imgID = getContext().getResources().getIdentifier(dataBeanList.get(position - mHeaderView).getIco(),
+                        "drawable",getContext().getPackageName());
+                holder.setImageResource(R.id.iv_mypage_photo, imgID);
+            }
             super.onBindViewHolder(holder, position);
         } else {
 

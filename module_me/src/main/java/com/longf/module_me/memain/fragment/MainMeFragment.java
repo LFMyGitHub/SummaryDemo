@@ -1,20 +1,24 @@
-package com.longf.module_me.fragment;
+package com.longf.module_me.memain.fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.longf.lib_api.entity.MainMeEntity;
 import com.longf.lib_api.entity.MainMeSettingEntity;
 import com.longf.lib_common.mvp.BaseRefreshFragment;
+import com.longf.lib_common.util.LinkUtils;
 import com.longf.module_me.R;
-import com.longf.module_me.adapter.MainMineAdapter;
-import com.longf.module_me.contract.MainMeContract;
-import com.longf.module_me.model.MainMeModel;
-import com.longf.module_me.presenter.MainMePresenter;
+import com.longf.module_me.memain.adapter.MainMineAdapter;
+import com.longf.module_me.memain.contract.MainMeContract;
+import com.longf.module_me.memain.model.MainMeModel;
+import com.longf.module_me.memain.presenter.MainMePresenter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -133,6 +137,13 @@ public class MainMeFragment extends BaseRefreshFragment<MainMeModel, MainMeContr
         }else {
             mMainMineAdapter.setNewInstance(mList);
         }
+
+        mMainMineAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
+                LinkUtils.parse(getContext(), mList.get(position).getUrl(), mList.get(position).getTitle());
+            }
+        });
 
         if(flag){
             mTvVersion.setText("sssss");

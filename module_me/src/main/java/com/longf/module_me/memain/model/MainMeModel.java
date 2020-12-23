@@ -1,4 +1,4 @@
-package com.longf.module_me.model;
+package com.longf.module_me.memain.model;
 
 import android.content.Context;
 
@@ -9,7 +9,7 @@ import com.longf.lib_api.entity.MainMeEntity;
 import com.longf.lib_api.entity.MainMeSettingEntity;
 import com.longf.lib_api.http.RxAdapter;
 import com.longf.lib_common.mvp.model.BaseModel;
-import com.longf.module_me.contract.MainMeContract;
+import com.longf.module_me.memain.contract.MainMeContract;
 
 import io.reactivex.Observable;
 

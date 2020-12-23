@@ -1,4 +1,4 @@
-package com.longf.module_me.presenter;
+package com.longf.module_me.memain.presenter;
 
 import android.content.Context;
 
@@ -10,9 +10,8 @@ import com.longf.lib_common.mvp.presenter.BaseRefreshPresenter;
 import com.longf.lib_api.util.GsonUtils;
 import com.longf.lib_common.util.NetUtils;
 import com.longf.lib_common.util.SimulateNetAPI;
-import com.longf.lib_common.util.ToastUtils;
-import com.longf.module_me.contract.MainMeContract;
-import com.longf.module_me.model.MainMeModel;
+import com.longf.module_me.memain.contract.MainMeContract;
+import com.longf.module_me.memain.model.MainMeModel;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;

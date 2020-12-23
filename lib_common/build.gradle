@@ -8,10 +8,16 @@ android {
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ AROUTER_MODULE_NAME : project.getName() ]
+            }
+        }
     }
 
     buildTypes {
-        debug{
+        debug {
             buildConfigField "boolean", 'IS_DEBUG', 'true'
         }
         release {
@@ -61,4 +67,8 @@ dependencies {
     api rootProject.ext.dependencies["RoundedImageView"]
     api rootProject.ext.dependencies["SystemBarTint"]
     api rootProject.ext.dependencies["EasyNavigation"]
+    api rootProject.ext.dependencies["ZXingLite"]
+    api rootProject.ext.dependencies["ZXing"]
+
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 }

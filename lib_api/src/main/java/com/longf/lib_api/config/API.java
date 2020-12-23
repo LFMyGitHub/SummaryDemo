@@ -17,11 +17,30 @@ public class API {
         public static final String ADS_DATA = "ads_data";
     }
 
+    //文件配置
     public static class FileModule{
         public static final String FILE_DOWN_PATH = "MyDown";
     }
 
+    //缓存配置
     public static class SPModule{
         public static final String SP_APP = "sp_app";
+        public static final String IS_LOGIN = "is_login";
+    }
+
+    //扫码配置
+    public static class ScanModule{
+        //第三方调用识别
+        public static final String SCAN_EXTERNAL_CALL = "scan_external_call";
+        //扫码第三方回调数据
+        public static final String QRCODE_VALUE = "qrcode_value";
+        //第三方调用扫码功能回调值
+        public final static String QRCODE_SOURCE = "qrcode_source";
+        //扫码界面title
+        public static final String KEY_TITLE = "key_title";
+        //是否连续扫码
+        public static final String KEY_IS_CONTINUOUS = "key_continuous_scan";
+        //条形码或二维码
+        public static final String KEY_IS_QR_CODE = "key_is_qr_code";
     }
 }

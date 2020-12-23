@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.king.zxing.ViewfinderView
+        android:id="@+id/viewfinderView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:labelText="@string/scan_tips"
+        app:labelTextLocation="bottom"
+        />
+
+    <ImageView
+        android:id="@+id/ivTorch"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="center"
+        android:src="@drawable/zxl_torch_selector"
+        android:layout_marginTop="@dimen/dp_200" />
+
+    <ImageView
+        android:id="@+id/iv_gallery"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="bottom|right"
+        android:src="@drawable/gallery"
+        android:layout_marginBottom="@dimen/dp_50"
+        android:layout_marginRight="@dimen/dp_50"
+        />
+
+    <include layout="@layout/toolbar" />
+</FrameLayout>

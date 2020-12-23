@@ -3,13 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar_root"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:background="?attr/colorPrimary"
-    android:elevation="@dimen/dp_4"
-    android:minHeight="?attr/actionBarSize"
-    android:theme="@style/ToolbarTheme"
-    app:layout_collapseMode="pin"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    android:layout_height="wrap_content"
+    android:background="@color/color_000000"
+    app:navigationIcon="@drawable/btn_back_selector"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp">
 
     <TextView
         android:id="@+id/toolbar_title"
@@ -17,6 +15,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/title"
-        android:textColor="?attr/colorPrimaryDark"
+        android:textColor="@color/color_FFFFFF"
         android:textSize="@dimen/sp_17" />
 </androidx.appcompat.widget.Toolbar>

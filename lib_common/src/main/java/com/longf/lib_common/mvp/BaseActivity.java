@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewStub;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -20,6 +21,7 @@ import com.longf.lib_common.event.common.BaseActivityEvent;
 import com.longf.lib_common.manager.ActivityManager;
 import com.longf.lib_common.mvp.view.BaseView;
 import com.longf.lib_common.util.NetUtils;
+import com.longf.lib_common.util.SimulateNetAPI;
 import com.longf.lib_common.view.LoadingInitView;
 import com.longf.lib_common.view.LoadingTransView;
 import com.longf.lib_common.view.NetErrorView;
@@ -96,9 +98,14 @@ public abstract class BaseActivity extends RxAppCompatActivity implements BaseVi
     protected void initToolbar(View view) {
         mToolbar = view.findViewById(R.id.toolbar_root);
         mTxtTitle = view.findViewById(R.id.toolbar_title);
+        mTxtTitle.setTextColor(getResources().getColor(getTxtColor()));
         if (mToolbar != null) {
+            SimulateNetAPI.immersiveStatusBar(this, mToolbar, 0.2f);
+            mToolbar.setBackgroundColor(getResources().getColor(getTolBarBgColor()));
             setSupportActionBar(mToolbar);
             getSupportActionBar().setDisplayShowTitleEnabled(false);
+            //默认显示返回按钮
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -119,6 +126,14 @@ public abstract class BaseActivity extends RxAppCompatActivity implements BaseVi
         if (mTxtTitle != null && !TextUtils.isEmpty(tootBarTitle)) {
             mTxtTitle.setText(tootBarTitle);
         }
+    }
+
+    public int getTolBarBgColor() {
+        return R.color.color_000000;
+    }
+
+    public int getTxtColor() {
+        return R.color.color_FFFFFF;
     }
 
     @Override
