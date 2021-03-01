@@ -1,12 +1,11 @@
-package com.longf.module_main.fragment;
+package com.longf.module_page3.fragment;
 
 import android.view.View;
 
 import com.longf.lib_common.mvp.BaseMvpFragment;
-import com.longf.module_main.R;
+import com.longf.module_page3.R;
 
-public class MainFragment extends BaseMvpFragment {
-
+public class MainPage3Fragment extends BaseMvpFragment {
     @Override
     public void injectPresenter() {
 
@@ -14,7 +13,7 @@ public class MainFragment extends BaseMvpFragment {
 
     @Override
     public int onBindLayout() {
-        return R.layout.fragment_main;
+        return R.layout.fragment_page3_layout;
     }
 
     @Override

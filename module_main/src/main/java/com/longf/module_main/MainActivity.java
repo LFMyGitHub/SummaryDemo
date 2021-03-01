@@ -17,6 +17,8 @@ import com.longf.lib_api.config.API;
 import com.longf.lib_common.mvp.BaseActivity;
 import com.longf.lib_common.provider.IMainProvider;
 import com.longf.lib_common.provider.IMeProvider;
+import com.longf.lib_common.provider.IPage2Provider;
+import com.longf.lib_common.provider.IPage3Provider;
 import com.longf.lib_common.util.LinkUtils;
 import com.longf.lib_common.util.ToastUtils;
 import com.longf.module_main.entity.MainChannel;
@@ -35,8 +37,16 @@ public class MainActivity extends BaseActivity {
     @Autowired(name = "/me/main")
     IMeProvider mIMeProvider;
 
+    @Autowired(name = "/page2/main")
+    IPage2Provider mIPage2Provider;
+
+    @Autowired(name = "/page3/main")
+    IPage3Provider mIPage3Provider;
+
     private Fragment mMainFragment;
     private Fragment mMeFragment;
+    private Fragment mPage2Fragment;
+    private Fragment mPage3Fragment;
     private Fragment mCurrFragment;
 
     private EasyNavigationBar mNnavigationBar;
@@ -60,11 +70,16 @@ public class MainActivity extends BaseActivity {
         if (mIMeProvider != null) {
             mMeFragment = mIMeProvider.getMainMeFragment();
         }
+        if (mIPage2Provider != null) {
+            mPage2Fragment = mIPage2Provider.getMainPage2Fragment();
+        }
+        if (mIPage3Provider != null) {
+            mPage3Fragment = mIPage3Provider.getMainPage3Fragment();
+        }
         mCurrFragment = mMainFragment;
         if (mMainFragment != null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, mMainFragment, MainChannel.MAIN.name).commit();
         }
-
         if (API.MENU_STATE == 1) {
             useNavigationMenu();
         } else if (API.MENU_STATE == 2) {
@@ -140,8 +155,8 @@ public class MainActivity extends BaseActivity {
         mNnavigationBar = findViewById(R.id.navigationBar);
         mNnavigationBar.setVisibility(View.VISIBLE);
         mFragments.add(mMainFragment);
-        mFragments.add(mMainFragment);
-        mFragments.add(mMainFragment);
+        mFragments.add(mPage2Fragment);
+        mFragments.add(mPage3Fragment);
         mFragments.add(mMeFragment);
 
         mNnavigationBar.titleItems(mTabText)
@@ -160,9 +175,13 @@ public class MainActivity extends BaseActivity {
             public boolean onTabSelectEvent(View view, int position) {
                 switch (position) {
                     case 0:
-                    case 1:
-                    case 2:
                         switchContent(mCurrFragment, mFragments.get(position), MainChannel.MAIN.name);
+                        break;
+                    case 1:
+                        switchContent(mCurrFragment, mFragments.get(position), MainChannel.PAGE2.name);
+                        break;
+                    case 2:
+                        switchContent(mCurrFragment, mFragments.get(position), MainChannel.PAGE3.name);
                         break;
                     case 3:
                         switchContent(mCurrFragment, mFragments.get(position), MainChannel.ME.name);
